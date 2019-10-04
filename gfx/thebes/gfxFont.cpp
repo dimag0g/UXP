@@ -2604,6 +2604,10 @@ gfxFont::GetShapedWord(DrawTarget *aDrawTarget,
     return sw;
 }
 
+template gfxShapedWord* gfxFont::GetShapedWord
+<unsigned char>(mozilla::gfx::DrawTarget*, unsigned char const*, unsigned int, unsigned int,
+mozilla::unicode::Script, bool, int, unsigned int, gfxTextPerfMetrics*);
+
 bool
 gfxFont::CacheHashEntry::KeyEquals(const KeyTypePointer aKey) const
 {
