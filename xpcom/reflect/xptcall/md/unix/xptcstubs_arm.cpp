@@ -13,7 +13,7 @@
 #endif
 
 /* Specify explicitly a symbol for this function, don't try to guess the c++ mangled symbol.  */
-static nsresult PrepareAndDispatch(nsXPTCStubBase* self, uint32_t methodIndex, uint32_t* args) asm("_PrepareAndDispatch")
+extern "C" /*static*/ nsresult PrepareAndDispatch(nsXPTCStubBase* self, uint32_t methodIndex, uint32_t* args) asm("_PrepareAndDispatch")
 ATTRIBUTE_USED;
 
 #ifdef __ARM_EABI__
@@ -39,7 +39,7 @@ ATTRIBUTE_USED;
 #define THUMB_FUNC
 #endif
 
-static nsresult
+/*static*/ nsresult
 PrepareAndDispatch(nsXPTCStubBase* self, uint32_t methodIndex, uint32_t* args)
 {
 #define PARAM_BUFFER_COUNT     16
